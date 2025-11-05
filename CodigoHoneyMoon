@@ -1,0 +1,39 @@
+@startuml
+title Proceso de Compra del Jabón Honeymoon en la Página Web
+
+start
+
+:Inicio del proceso;
+:Visualizar catálogo de productos;
+:Seleccionar jabón Honeymoon;
+if (¿Hay existencias disponibles?) then (Sí)
+  :Agregar al carrito de compras;
+else (No)
+  :Mostrar mensaje "Producto agotado";
+  :Regresar al catálogo;
+  repeat
+    :Seleccionar otro producto;
+  repeat while (¿Producto disponible? == No)
+endif
+
+:Verificar carrito de compras;
+if (¿Desea modificar el pedido?) then (Sí)
+  :Regresar al catálogo;
+  :Actualizar selección;
+else (No)
+  :Continuar con la compra;
+endif
+
+:Ingresar datos del cliente (nombre, dirección, correo);
+:Seleccionar método de pago;
+
+if (¿Pago aprobado?) then (Sí)
+  :Confirmar compra;
+  :Enviar correo de confirmación al cliente;
+else (No)
+  :Mostrar mensaje "Error en el pago";
+  :Reintentar método de pago;
+endif
+
+stop
+@enduml
