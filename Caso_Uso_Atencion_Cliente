@@ -1,0 +1,20 @@
+@startuml
+title Caso de Uso 4: Atención al Cliente
+
+actor Cliente
+actor "Soporte técnico" as Soporte
+
+rectangle "Módulo de Atención al Cliente" {
+  usecase "Enviar duda o queja" as UC1
+  usecase "Registrar solicitud" as UC2
+  usecase "Responder al cliente" as UC3
+  usecase "Generar reporte de satisfacción" as UC4
+}
+
+Cliente --> UC1
+UC1 --> UC2
+Soporte --> UC3
+Soporte --> UC4
+UC3 --> Cliente
+
+@enduml
