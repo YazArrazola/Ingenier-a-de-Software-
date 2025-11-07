@@ -1,0 +1,20 @@
+@startuml
+title Caso de Uso 2: Gestión de Inventario
+
+actor Administrador
+actor Proveedor
+
+rectangle "Módulo de Inventario" {
+  usecase "Registrar lote de producción" as UC1
+  usecase "Actualizar existencias" as UC2
+  usecase "Consultar stock disponible" as UC3
+  usecase "Notificar faltante de insumos" as UC4
+}
+
+Administrador --> UC1
+Administrador --> UC2
+Administrador --> UC3
+Proveedor --> UC4
+UC4 --> UC1
+
+@enduml
