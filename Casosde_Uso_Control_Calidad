@@ -1,0 +1,21 @@
+@startuml
+title Caso de Uso 3: Control de Calidad del Jabón Honeymoon
+
+actor "Empleado de producción" as Empleado
+actor "Administrador" as Admin
+
+rectangle "Módulo de Control de Calidad" {
+  usecase "Registrar pruebas de pH y textura" as UC1
+  usecase "Validar resultados del lote" as UC2
+  usecase "Aprobar o rechazar lote" as UC3
+  usecase "Generar reporte de calidad" as UC4
+}
+
+Empleado --> UC1
+Empleado --> UC2
+Admin --> UC3
+Admin --> UC4
+UC2 --> UC3
+UC3 --> UC4
+
+@enduml
