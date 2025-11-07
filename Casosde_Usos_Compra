@@ -1,0 +1,20 @@
+@startuml
+title Caso de Uso 1: Compra del Jabón Honeymoon
+
+actor Cliente
+
+rectangle "Módulo de Ventas en Línea" {
+  usecase "Ver catálogo de jabones" as UC1
+  usecase "Seleccionar producto" as UC2
+  usecase "Agregar al carrito" as UC3
+  usecase "Realizar pago" as UC4
+  usecase "Recibir confirmación de compra" as UC5
+}
+
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Cliente --> UC4
+UC4 --> UC5
+
+@enduml
